@@ -1,0 +1,29 @@
+<%= form_with url: flights_path, method: :get, local: true do |form| %>
+  <div>
+    <%= form.label 'Origin' %>
+    <%= form.select :origin_id, options_for_airport, selected: params[:origin_id], required: true %>
+  </div>
+
+  <div>
+    <%= form.label 'Destination' %>
+    <%= form.select :destination_id, options_for_airport, selected: params[:destination_id], required: true %>
+  </div>
+
+  <div>
+    <%= form.label 'Number of passengers' %>
+    <%= form.select :number_of_passengers, [1, 2, 3, 4], selected: params[:number_of_passengers], required: true %>
+  </div>
+
+  <div>
+    <%= form.label 'Date' %>
+    <%= form.date_field :date, value: params[:date], placeholder: 'dd/mm/yyyy', required: true %>
+  </div>
+
+  <%= form.submit 'Find flights' %>
+
+  <% @flights.each do |flight| %>
+    <div>
+      <%= flight.code %>
+    </div>
+  <% end %>
+<% end %>
