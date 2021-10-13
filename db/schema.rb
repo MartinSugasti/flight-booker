@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_071543) do
     t.string "code", null: false
     t.integer "price", null: false
     t.time "departure_time", null: false
+    t.integer "days_of_the_week", default: [], array: true
     t.integer "number_of_seats", null: false
     t.integer "duration", null: false
     t.bigint "origin_id"
