@@ -25,13 +25,11 @@
 <% if @flights.present? %>
   <%= form_with url: new_booking_path, method: :get, local: true do |form| %>
     <%= form.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
+    <%= form.hidden_field :date, value: params[:date] %>
 
-    <% @flights.each do |flight| %>
-      <div>
-        <%= form.radio_button :flight_id, flight.id %>
-        <%= form.label :flight_id, flight.code %>
-      </div>
-    <% end %>
+    <div>
+      <%= form.collection_radio_buttons :flight_id, @flights, :id, :code, {}, required: true %>
+    </div>
 
     <%= form.submit 'Book flight' %>
   <% end %>

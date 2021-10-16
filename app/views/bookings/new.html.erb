@@ -1,0 +1,40 @@
+<%= form_with model: @booking, local: true do |form| %>
+  <%= form.hidden_field :date, value: @booking.date %>
+  <%= form.hidden_field :flight_id, value: @booking.flight_id %>
+
+  <div>
+    <label>Date: <%= @booking.date %></label>
+  </div>
+
+  <div>
+    <label>From: <%= @booking.flight.origin.name %></label>
+  </div>
+
+  <div>
+    <label>To: <%= @booking.flight.destination.name %></label>
+  </div>
+
+  <%= form.fields_for :passengers do |passengers_form| %>
+    <div>
+      <%= passengers_form.label 'Name' %>
+      <%= passengers_form.text_field :name %>
+    </div>
+
+    <div>
+      <%= passengers_form.label 'Last name' %>
+      <%= passengers_form.text_field :surname %>
+    </div>
+
+    <div>
+      <%= passengers_form.label 'Passport' %>
+      <%= passengers_form.text_field :passport %>
+    </div>
+
+    <div>
+      <%= passengers_form.label 'Email' %>
+      <%= passengers_form.text_field :email %>
+    </div>
+  <% end %>
+
+  <%= form.submit 'Confirm' %>
+<% end %>

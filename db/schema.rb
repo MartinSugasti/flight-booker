@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 2021_10_12_071543) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "identifier", null: false
+    t.string "identifier", null: false
+    t.datetime "date", null: false
     t.bigint "flight_id"
     t.index ["flight_id"], name: "index_bookings_on_flight_id"
     t.index ["identifier"], name: "index_bookings_on_identifier", unique: true
