@@ -20,12 +20,19 @@
   </div>
 
   <%= form.submit 'Find flights' %>
+<% end %>
 
-  <% if @flights.present? %>
+<% if @flights.present? %>
+  <%= form_with url: new_booking_path, method: :get, local: true do |form| %>
+    <%= form.hidden_field :number_of_passengers, value: params[:number_of_passengers] %>
+
     <% @flights.each do |flight| %>
       <div>
-        <%= flight.code %>
+        <%= form.radio_button :code, flight.code %>
+        <%= form.label :code, flight.code %>
       </div>
     <% end %>
+
+    <%= form.submit 'Book flight' %>
   <% end %>
 <% end %>
