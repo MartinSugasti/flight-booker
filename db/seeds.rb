@@ -92,7 +92,7 @@ airlines = %w[AA UN DL SW JB]
     duration: rand(30..420),
     days_of_the_week: [0, 1, 2, 3, 4, 5, 6].sample(rand(1..7)),
     number_of_seats: rand(50..350),
-    origin_id: airports.first.id,
-    destination_id: airports.second.id
+    origin_id: airports[0].id,
+    destination_id: airports[1].id
   )
 end

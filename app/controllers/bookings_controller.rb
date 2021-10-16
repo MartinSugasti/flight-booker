@@ -21,8 +21,19 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     return if @booking
 
-    flash[:alert] = 'Sorry, this booking does not exist'
+    flash[:alert] = 'Sorry, booking does not exist'
     redirect_to root_url
+  end
+
+  def search
+    @booking = Booking.find_by_identifier(params[:identifier])
+
+    if @booking
+      render :show
+    else
+      flash[:alert] = 'Sorry, booking does not exist'
+      redirect_to root_path
+    end
   end
 
   private

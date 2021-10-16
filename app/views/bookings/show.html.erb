@@ -11,7 +11,7 @@
   Destination: <%= @booking.flight.destination.name %>
 </div>
 <div>
-  Date: <%= @booking.date %> at <%= @booking.flight.departure_time %>
+  Date: <%= @booking.date.strftime('%A, %e %b %Y') %> at <%= @booking.flight.departure_time.strftime('%I:%M%p') %>
 </div>
 
 <% @booking.passengers.each do |passenger| %>
