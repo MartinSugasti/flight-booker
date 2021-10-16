@@ -1,5 +1,5 @@
 class Passenger < ActiveRecord::Base
-  has_many :bookings
+  belongs_to :booking
 
   validates_presence_of :name, :surname, :passport, :email
 end

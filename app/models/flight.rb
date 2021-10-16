@@ -1,8 +1,7 @@
 class Flight < ActiveRecord::Base
   belongs_to :origin, class_name: 'Airport'
   belongs_to :destination, class_name: 'Airport'
-  has_many :seats, dependent: :destroy
-  has_many :bookings, through: :seats
+  has_many :bookings
 
   validates_presence_of :code, :price, :departure_time, :number_of_seats, :duration
   validates :price, numericality: { greater_than: 0 }
@@ -11,10 +10,10 @@ class Flight < ActiveRecord::Base
   def self.find_by_search_params(origin_id:, destination_id:, date:, number_of_passengers:)
     Flight.where(origin_id: origin_id, destination_id: destination_id)
           .where('? = ANY (days_of_the_week)', date.wday)
-          .select { |flight| flight.free_seats >= number_of_passengers }
+          .select { |flight| flight.available_seats >= number_of_passengers }
   end
 
-  def free_seats
+  def available_seats
     number_of_seats - bookings.count
   end
 end
