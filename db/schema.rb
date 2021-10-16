@@ -26,11 +26,9 @@ ActiveRecord::Schema.define(version: 2021_10_12_071543) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "identifier", null: false
-    t.bigint "seat_id"
-    t.bigint "passenger_id"
+    t.bigint "flight_id"
+    t.index ["flight_id"], name: "index_bookings_on_flight_id"
     t.index ["identifier"], name: "index_bookings_on_identifier", unique: true
-    t.index ["passenger_id"], name: "index_bookings_on_passenger_id"
-    t.index ["seat_id"], name: "index_bookings_on_seat_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -63,24 +61,15 @@ ActiveRecord::Schema.define(version: 2021_10_12_071543) do
     t.string "surname", null: false
     t.string "passport", null: false
     t.string "email", null: false
+    t.bigint "booking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_passengers_on_email", unique: true
-    t.index ["passport"], name: "index_passengers_on_passport", unique: true
-  end
-
-  create_table "seats", force: :cascade do |t|
-    t.integer "number", null: false
-    t.bigint "flight_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["flight_id"], name: "index_seats_on_flight_id"
+    t.index ["booking_id"], name: "index_passengers_on_booking_id"
   end
 
   add_foreign_key "airports", "cities"
-  add_foreign_key "bookings", "passengers"
-  add_foreign_key "bookings", "seats"
+  add_foreign_key "bookings", "flights"
   add_foreign_key "flights", "airports", column: "destination_id"
   add_foreign_key "flights", "airports", column: "origin_id"
-  add_foreign_key "seats", "flights"
+  add_foreign_key "passengers", "bookings"
 end
