@@ -425,7 +425,8 @@ flights = [
 flights.each do |flight_information|
   origin = Airport.find_by_name(flight_information[:origin_name])
   destination = Airport.find_by_name(flight_information[:destination_name])
-  Flight.create(
+
+  flight = Flight.create(
     code: flight_information[:code],
     price: flight_information[:price],
     departure_time: flight_information[:departure_time],
@@ -435,4 +436,8 @@ flights.each do |flight_information|
     origin_id: origin.id,
     destination_id: destination.id
   )
+
+  1.upto(flight.number_of_seats) do |seat_number|
+    flight.seats.create(number: seat_number)
+  end
 end
