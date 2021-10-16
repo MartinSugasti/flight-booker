@@ -10,10 +10,14 @@ class Flight < ActiveRecord::Base
   def self.find_by_search_params(origin_id:, destination_id:, date:, number_of_passengers:)
     Flight.where(origin_id: origin_id, destination_id: destination_id)
           .where('? = ANY (days_of_the_week)', date.wday)
-          .select { |flight| flight.available_seats >= number_of_passengers }
+          .select { |flight| flight.available_seats(date) >= number_of_passengers }
   end
 
-  def available_seats
-    number_of_seats - bookings.count
+  def available_seats(date)
+    passengers_by_date = bookings.where(date: date).sum do |booking|
+      booking.passengers.count
+    end
+
+    number_of_seats - passengers_by_date
   end
 end

@@ -1,0 +1,30 @@
+<div>
+  Booking identifier: <%= @booking.identifier %>
+</div>
+<div>
+  Flight: <%= @booking.flight.code %>
+</div>
+<div>
+  Origin: <%= @booking.flight.origin.name %>
+</div>
+<div>
+  Destination: <%= @booking.flight.destination.name %>
+</div>
+<div>
+  Date: <%= @booking.date %> at <%= @booking.flight.departure_time %>
+</div>
+
+<% @booking.passengers.each do |passenger| %>
+  <div>
+    Name: <%= passenger.name %>
+  </div>
+  <div>
+    Surname: <%= passenger.surname %>
+  </div>
+  <div>
+    Passport: <%= passenger.passport %>
+  </div>
+  <div>
+    Email: <%= passenger.email %>
+  </div>
+<% end %>
