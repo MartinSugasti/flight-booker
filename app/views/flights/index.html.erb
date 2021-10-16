@@ -21,9 +21,11 @@
 
   <%= form.submit 'Find flights' %>
 
-  <% @flights.each do |flight| %>
-    <div>
-      <%= flight.code %>
-    </div>
+  <% if @flights.present? %>
+    <% @flights.each do |flight| %>
+      <div>
+        <%= flight.code %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

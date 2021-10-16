@@ -249,6 +249,176 @@ flights = [
     duration: 90,
     origin_name: 'John F. Kennedy',
     destination_name: 'Los Angeles International Airport'
+  },
+  {
+    code: 'AA979',
+    price: 200,
+    departure_time: '10',
+    days_of_the_week: [0, 2, 3, 5, 6],
+    number_of_seats: 250,
+    duration: 300,
+    origin_name: 'John F. Kennedy',
+    destination_name: 'San Francisco International Airport'
+  },
+  {
+    code: 'AA252',
+    price: 300,
+    departure_time: '9',
+    days_of_the_week: [1, 3, 4, 5],
+    number_of_seats: 150,
+    duration: 300,
+    origin_name: "O'Hare",
+    destination_name: 'San Francisco International Airport'
+  },
+  {
+    code: 'DL464',
+    price: 300,
+    departure_time: '13',
+    days_of_the_week: [0, 1, 2, 6],
+    number_of_seats: 200,
+    duration: 240,
+    origin_name: 'Hartsfield-Jackson',
+    destination_name: 'San Francisco Local Airport'
+  },
+  {
+    code: 'DL870',
+    price: 400,
+    departure_time: '14',
+    days_of_the_week: [0, 4, 5, 6],
+    number_of_seats: 400,
+    duration: 360,
+    origin_name: 'John F. Kennedy',
+    destination_name: 'Los Angeles International Airport'
+  },
+  {
+    code: 'DL310',
+    price: 200,
+    departure_time: '10',
+    days_of_the_week: [0, 1, 2, 4, 5, 6],
+    number_of_seats: 300,
+    duration: 60,
+    origin_name: 'San Francisco Local Airport',
+    destination_name: 'Los Angeles International Airport'
+  },
+  {
+    code: 'DL028',
+    price: 300,
+    departure_time: '11',
+    days_of_the_week: [0, 1, 2, 3, 4, 5, 6],
+    number_of_seats: 400,
+    duration: 300,
+    origin_name: 'Midway',
+    destination_name: 'Los Angeles International Airport'
+  },
+  {
+    code: 'UN313',
+    price: 400,
+    departure_time: '6',
+    days_of_the_week: [0, 1, 2, 3, 4, 5, 6],
+    number_of_seats: 150,
+    duration: 300,
+    origin_name: 'San Francisco International Airport',
+    destination_name: "O'Hare"
+  },
+  {
+    code: 'UN575',
+    price: 400,
+    departure_time: '13',
+    days_of_the_week: [1, 2, 3, 4, 6],
+    number_of_seats: 100,
+    duration: 240,
+    origin_name: 'Atlanta Local Airport',
+    destination_name: "O'Hare"
+  },
+  {
+    code: 'UN181',
+    price: 200,
+    departure_time: '18',
+    days_of_the_week: [1, 2, 3, 4, 5],
+    number_of_seats: 200,
+    duration: 300,
+    origin_name: 'Miami International Airport',
+    destination_name: 'Midway'
+  },
+  {
+    code: 'SW200',
+    price: 300,
+    departure_time: '20',
+    days_of_the_week: [1, 2, 3, 4, 5],
+    number_of_seats: 250,
+    duration: 180,
+    origin_name: 'Hartsfield-Jackson',
+    destination_name: 'Midway'
+  },
+  {
+    code: 'SW419',
+    price: 300,
+    departure_time: '19',
+    days_of_the_week: [0, 1, 2, 5, 6],
+    number_of_seats: 300,
+    duration: 240,
+    origin_name: 'San Francisco International Airport',
+    destination_name: 'Hartsfield-Jackson'
+  },
+  {
+    code: 'SW329',
+    price: 500,
+    departure_time: '5',
+    days_of_the_week: [0, 1, 2, 5, 6],
+    number_of_seats: 200,
+    duration: 180,
+    origin_name: 'Los Angeles International Airport',
+    destination_name: 'Hartsfield-Jackson'
+  },
+  {
+    code: 'DL626',
+    price: 300,
+    departure_time: '21',
+    days_of_the_week: [0, 1, 2, 5, 6],
+    number_of_seats: 200,
+    duration: 360,
+    origin_name: 'John F. Kennedy',
+    destination_name: 'Atlanta Local Airport'
+  },
+  {
+    code: 'DL720',
+    price: 300,
+    departure_time: '20',
+    days_of_the_week: [0, 1, 2, 5, 6],
+    number_of_seats: 150,
+    duration: 300,
+    origin_name: 'Midway',
+    destination_name: 'Miami International Airport'
+  },
+  {
+    code: 'JB433',
+    price: 300,
+    departure_time: '7',
+    days_of_the_week: [3, 4, 5, 6],
+    number_of_seats: 100,
+    duration: 240,
+    origin_name: 'John F. Kennedy',
+    destination_name: 'Miami International Airport'
+  },
+  {
+    code: 'JB242',
+    price: 300,
+    departure_time: '7',
+    days_of_the_week: [0, 1, 3, 4, 5, 6],
+    number_of_seats: 100,
+    duration: 180,
+    origin_name: 'Miami International Airport',
+    destination_name: 'John F. Kennedy'
+  },
+  {
+    code: 'JT900',
+    price: 600,
+    departure_time: '9',
+    days_of_the_week: [6],
+    number_of_seats: 50,
+    duration: 90,
+    origin_name: 'Los Angeles International Airport',
+    destination_name: 'John F. Kennedy'
   }
 ]
 
