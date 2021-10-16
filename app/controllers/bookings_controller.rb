@@ -1,7 +1,5 @@
 class BookingsController < ApplicationController
-  def new
-    binding.pry
-  end
+  def new; end
 
   def create; end
 

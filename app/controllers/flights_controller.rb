@@ -12,11 +12,12 @@ class FlightsController < ApplicationController
   end
 
   def find_flights
-    @flights = Flight.where(
+    @flights = Flight.find_by_search_params(
       origin_id: params[:origin_id],
-      destination_id: params[:destination_id]
-    ).where('? = ANY (days_of_the_week)', params[:date].to_datetime.wday)
-
+      destination_id: params[:destination_id],
+      date: params[:date].to_datetime,
+      number_of_passengers: params[:number_of_passengers].to_i
+    )
     return if @flights.present?
 
     flash.now[:alert] = 'There is no flights for the specified parameters'

@@ -28,8 +28,8 @@
 
     <% @flights.each do |flight| %>
       <div>
-        <%= form.radio_button :code, flight.code %>
-        <%= form.label :code, flight.code %>
+        <%= form.radio_button :flight_id, flight.id %>
+        <%= form.label :flight_id, flight.code %>
       </div>
     <% end %>
 
