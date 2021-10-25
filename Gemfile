@@ -34,6 +34,7 @@ group :development, :test do
   gem 'pry', '~> 0.13.1'
   gem 'pry-byebug', '~> 3.9'
   gem 'rubocop', '~> 1.8'
+  gem 'letter_opener', '~> 1.4', '>= 1.4.1'
 end
 
 group :development do

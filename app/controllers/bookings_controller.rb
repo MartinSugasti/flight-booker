@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      flash[:notice] = 'Bookings confirmed'
+      flash[:notice] = 'Bookings confirmed. Check you email for more information.'
       redirect_to booking_path(@booking)
     else
       flash[:alert] = 'Something went wrong'
