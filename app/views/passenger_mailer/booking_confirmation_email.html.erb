@@ -1,0 +1,10 @@
+<body>
+  <h1><%= @passenger.name %>, thanks for flying with MartinSugasti.</h1>
+  <p>
+    You have successfully booked a flight from <%= @booking.flight.origin.name %> to <%= @booking.flight.destination.name %> for <%= @booking.date.strftime('%A, %e %b %Y') %>.<br>
+  </p>
+  <p>
+    To check the status of your booking, just follow <%= link_to 'this link', @url %>.
+  </p>
+  <p>Thanks for trusting us!</p>
+</body>
