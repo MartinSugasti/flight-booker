@@ -1,6 +1,5 @@
 class Booking < ActiveRecord::Base
   before_save :generate_identifier
-  after_save :send_confirmation_email
 
   belongs_to :flight
   has_many :passengers
@@ -22,12 +21,5 @@ class Booking < ActiveRecord::Base
     return if identifier.present?
 
     self.identifier = SecureRandom.hex 3
-  end
-
-  def send_confirmation_email
-    passengers.each do |passenger|
-      PassengerMailer.with(booking: self, passenger: passenger)
-                     .booking_confirmation_email.deliver_now
-    end
   end
 end
