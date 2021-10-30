@@ -20,6 +20,6 @@ class FlightsController < ApplicationController
     )
     return if @flights.present?
 
-    flash.now[:alert] = 'There is no flights for the specified parameters'
+    flash.now[:alert] = t '.errors.no_flights_found'
   end
 end

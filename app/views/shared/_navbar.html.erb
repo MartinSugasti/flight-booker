@@ -1,6 +1,6 @@
 <nav>
   <%= link_to root_path do %>
-    HOME
+    <%= t 'navbar.home_html' %>
   <% end %>
 
   <%= form_with url: search_bookings_path, method: :get, local: true do |form| %>
@@ -8,6 +8,16 @@
       <%= form.text_field :identifier %>
     </div>
 
-    <%= form.submit 'Find booking' %>
+    <%= form.submit  t 'navbar.find_booking' %>
   <% end %>
+
+  <p>
+    <%= link_to t('languages.en'), change_locale_path(:en) %>
+  </p>
+  <p>
+    <%= link_to t('languages.es'), change_locale_path(:es) %>
+  </p>
+  <p>
+    <%= link_to t('languages.ru'), change_locale_path(:ru) %>
+  </p>
 </nav>

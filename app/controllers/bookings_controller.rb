@@ -9,10 +9,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
-      flash[:notice] = 'Bookings confirmed. Check you email for more information.'
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking), flash: { notice: (t '.success') }
     else
-      flash[:alert] = 'Something went wrong'
+      booking_errors = @booking.errors.full_messages.join(' ').html_safe
+      flash[:alert] = t('.error') + ' ' + booking_errors
       render :new
     end
   end
@@ -21,8 +21,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     return if @booking
 
-    flash[:alert] = 'Sorry, booking does not exist'
-    redirect_to root_url
+    redirect_to root_url, flash: { alert: (t '.errors.booking_not_found') }
   end
 
   def search
@@ -31,7 +30,7 @@ class BookingsController < ApplicationController
     if @booking
       render :show
     else
-      flash[:alert] = 'Sorry, booking does not exist'
+      flash[:alert] = t '.errors.booking_not_found'
       redirect_to root_path
     end
   end
