@@ -1,0 +1,60 @@
+es:
+  languages:
+    en: "IN"
+    es: "ES"
+    ru: "RU"
+  global:
+    at: "a las"
+  time:
+    formats:
+      date: "%A, %e %b %Y"
+      time: "%I:%M%p"
+  errors:
+    format: "%{message}"
+  activerecord:
+    attributes:
+      airport:
+        name: "Nombre"
+      booking:
+        identifier: "Identificador de la reserva"
+        date: "Fecha"
+        number_of_passengers: "Numero de pasajeros"
+      city:
+        name: "Nombre"
+        code: "Codigo de la ciudad"
+      flight:
+        code: "Codigo"
+        price: "Precio"
+        departure_time: "Hora de salida"
+        days_of_the_week: "Dias de la semana"
+        number_of_seats: "Numero de asientos"
+        duration: "Duracion"
+        origin_id: "Origen"
+        destination_id: "Destino"
+      passenger:
+        name: "Nombre"
+        surname: "Apellido"
+        passport: "Pasaporte"
+        email: "Email"
+    errors:
+      format: "%{message}"
+      models:
+        passenger:
+          blank: "%{attribute} no puede estar vacio."
+  navbar:
+    home_html: "<h1>Inicio</h1>"
+    find_booking: "Buscar reserva"
+  flights:
+    index:
+      find_flights: "Buscar vuelos"
+      book_flight: "Reservar vuelo"
+    errors:
+      no_flights_found: "Ningun vuelo cumple con las especificaciones."
+  bookings:
+    new:
+      confirm: "Confirmar"
+    create:
+      success: "Reserva confirmada. Chequea tu casilla de mensajes por mas informacion."
+      error: "Algo salio mal."
+    errors:
+      booking_not_found: "Lo sentimos, la reserva no existe."

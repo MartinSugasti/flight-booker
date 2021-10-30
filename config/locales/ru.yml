@@ -1,0 +1,60 @@
+ru:
+  languages:
+    en: "АН"
+    es: "ИС"
+    ru: "РУ"
+  global:
+    at: "в"
+  time:
+    formats:
+      date: "%A, %e %b %Y"
+      time: "%I:%M%p"
+  errors:
+    format: "%{message}"
+  activerecord:
+    attributes:
+      airport:
+        name: "Имя"
+      booking:
+        identifier: "Идентификатор бронирования"
+        date: "Дата"
+        number_of_passengers: "Количество пассажиров"
+      city:
+        name: "Имя"
+        code: "Код города"
+      flight:
+        code: "Код"
+        price: "Цена"
+        departure_time: "Время отправления"
+        days_of_the_week: "Дни недели"
+        number_of_seats: "Количество мест"
+        duration: "Продолжительность"
+        origin_id: "Источник"
+        destination_id: "Место назначения"
+      passenger:
+        name: "Имя"
+        surname: "Фамилия"
+        passport: "Заграничный пасспорт"
+        email: "Эл. адрес"
+    errors:
+      format: "%{message}"
+      models:
+        passenger:
+          blank: "%{attribute} не может быть пустым."
+  navbar:
+    home_html: "<h1>Дом</h1>"
+    find_booking: "Найти бронирование"
+  flights:
+    index:
+      find_flights: "Найти рейсы"
+      book_flight: "Забронировать рейс"
+    errors:
+      no_flights_found: "Нет рейсов по указанным параметрам."
+  bookings:
+    new:
+      confirm: "Подтверждать"
+    create:
+      success: "Заказы подтверждены. Проверьте свою электронную почту для получения дополнительной информации."
+      error: "Что-то пошло не так."
+    errors:
+      booking_not_found: "Извините, бронирования не существует."

@@ -3,38 +3,38 @@
   <%= form.hidden_field :flight_id, value: @booking.flight_id %>
 
   <div>
-    <label>Date: <%= @booking.date %></label>
+    <label><%= t 'activerecord.attributes.booking.date' %>: <%= l @booking.date, format: :date %></label>
   </div>
 
   <div>
-    <label>From: <%= @booking.flight.origin.name %></label>
+    <label><%= t 'activerecord.attributes.flight.origin_id' %>: <%= @booking.flight.origin.name %></label>
   </div>
 
   <div>
-    <label>To: <%= @booking.flight.destination.name %></label>
+    <label><%= t 'activerecord.attributes.flight.destination_id' %>: <%= @booking.flight.destination.name %></label>
   </div>
 
   <%= form.fields_for :passengers do |passengers_form| %>
     <div>
-      <%= passengers_form.label 'Name' %>
+      <%= passengers_form.label :name %>
       <%= passengers_form.text_field :name %>
     </div>
 
     <div>
-      <%= passengers_form.label 'Last name' %>
+      <%= passengers_form.label :surname %>
       <%= passengers_form.text_field :surname %>
     </div>
 
     <div>
-      <%= passengers_form.label 'Passport' %>
+      <%= passengers_form.label :passport %>
       <%= passengers_form.text_field :passport %>
     </div>
 
     <div>
-      <%= passengers_form.label 'Email' %>
+      <%= passengers_form.label :email %>
       <%= passengers_form.email_field :email %>
     </div>
   <% end %>
 
-  <%= form.submit 'Confirm' %>
+  <%= form.submit t '.confirm' %>
 <% end %>

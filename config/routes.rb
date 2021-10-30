@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
+  get '/change_locale/:locale', to: 'settings#change_locale', as: :change_locale
 end

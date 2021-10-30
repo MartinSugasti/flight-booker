@@ -30,4 +30,63 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  languages:
+    en: "EN"
+    es: "SP"
+    ru: "RU"
+  global:
+    at: "at"
+  time:
+    formats:
+      date: "%A, %e %b %Y"
+      time: "%I:%M%p"
+  errors:
+    format: "%{message}"
+  activerecord:
+    attributes:
+      airport:
+        name: "Name"
+      booking:
+        identifier: "Booking identifier"
+        date: "Date"
+        number_of_passengers: "Number of passengers"
+      city:
+        name: "Name"
+        code: "City code"
+      flight:
+        code: "Code"
+        price: "Price"
+        departure_time: "Departure time"
+        days_of_the_week: "Days of the week"
+        number_of_seats: "Number of seats"
+        duration: "Duration"
+        origin_id: "Origin"
+        destination_id: "Destination"
+      passenger:
+        name: "Name"
+        surname: "Last name"
+        passport: "Passport"
+        email: "Email"
+    errors:
+      format: "%{message}"
+      models:
+        passenger:
+          blank: "%{attribute} can not be empty."
+  navbar:
+    home_html: "<h1>Home</h1>"
+    find_booking: "Find booking"
+  flights:
+    index:
+      find_flights: "Find flights"
+      book_flight: "Book flight"
+    errors:
+      no_flights_found: "There are no flights for the specified parameters."
+  bookings:
+    new:
+      confirm: "Confirm"
+    create:
+      success: "Bookings confirmed. Check you email for more information."
+      error: "Something went wrong."
+    errors:
+      booking_not_found: "Sorry, booking does not exist."
+
