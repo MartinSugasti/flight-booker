@@ -3,7 +3,7 @@ class Booking < ActiveRecord::Base
   after_save :send_confirmation_email
 
   belongs_to :flight
-  has_many :passengers
+  has_many :passengers, index_errors: true
 
   accepts_nested_attributes_for :passengers
 

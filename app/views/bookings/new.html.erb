@@ -18,21 +18,25 @@
     <div>
       <%= passengers_form.label :name %>
       <%= passengers_form.text_field :name %>
+      <%= @booking.errors.full_messages_for(:"passengers[#{passengers_form.index}].name").join(', ') if @booking.errors.has_key?(:"passengers[#{passengers_form.index}].name") %>
     </div>
 
     <div>
       <%= passengers_form.label :surname %>
       <%= passengers_form.text_field :surname %>
+      <%= @booking.errors.full_messages_for(:"passengers[#{passengers_form.index}].surname").join(', ') if @booking.errors.has_key?(:"passengers[#{passengers_form.index}].surname") %>
     </div>
 
     <div>
       <%= passengers_form.label :passport %>
       <%= passengers_form.text_field :passport %>
+      <%= @booking.errors.full_messages_for(:"passengers[#{passengers_form.index}].passport").join(', ') if @booking.errors.has_key?(:"passengers[#{passengers_form.index}].passport") %>
     </div>
 
     <div>
       <%= passengers_form.label :email %>
       <%= passengers_form.email_field :email %>
+      <%= @booking.errors.full_messages_for(:"passengers[#{passengers_form.index}].email").join(', ') if @booking.errors.has_key?(:"passengers[#{passengers_form.index}].email") %>
     </div>
   <% end %>
 

@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking), flash: { notice: (t '.success') }
     else
-      booking_errors = @booking.errors.full_messages.join(' ').html_safe
+      booking_errors = @booking.errors.full_messages.uniq.join(' ').html_safe
       flash[:alert] = t('.error') + ' ' + booking_errors
       render :new
     end
